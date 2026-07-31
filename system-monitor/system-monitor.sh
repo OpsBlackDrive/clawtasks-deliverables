@@ -89,5 +89,6 @@ line=$(printf '%s cpu=%s%% load=%s cores=%s memory=%s%%(%s/%sMiB,available=%sMiB
   "$disk_available_gib" \
   "$DISK_PATH")
 
+# Append atomically enough for ordinary single-host cron usage.
 printf '%s\n' "$line" >> "$LOG_FILE"
 printf '%s\n' "$line"
